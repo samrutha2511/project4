@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{pd.bimg.url}}" width="400" height="400">
+        </div>
+        <div class="col-md-6" style="align:right">
+            <h4>{{pd.bname}}</h4><br>
+            <h5>Description: {{pd.bdesc}}</h5><br>
+            <h5>Year: {{pd.byear}}</h5>
+            <br>
+            <a class="btn btn-warning" href="{% url 'productapp:update' pd.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'productapp:delete' pd.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock  %}
